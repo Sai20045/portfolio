@@ -4,7 +4,8 @@ import {
   Mail, 
   ArrowUp, 
   Heart,
-  Sparkles
+  Sparkles,
+  Download
 } from 'lucide-react';
 import { GithubIcon as Github, LinkedinIcon as Linkedin } from './SocialIcons';
 import { personalInfo } from '../data/portfolioData';
@@ -77,9 +78,16 @@ const Footer = ({ onOpenResume }) => {
             <p className="footer-cta-text">
               Looking for a fresher Python Full Stack Developer who can write clean, effective code?
             </p>
-            <button onClick={onOpenResume} className="btn btn-primary btn-sm w-full">
-              <span>View Resume</span>
-            </button>
+            <a
+              href={personalInfo.resumePdf}
+              download="Sai_Pradeep_Resume.pdf"
+              onClick={onOpenResume}
+              className="btn btn-primary btn-sm w-full"
+              style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+            >
+              <Download size={16} />
+              <span>Download Resume</span>
+            </a>
           </div>
         </div>
 

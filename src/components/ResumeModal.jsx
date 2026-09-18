@@ -27,10 +27,19 @@ const ResumeModal = ({ onClose }) => {
         <div className="resume-modal-header no-print">
           <div className="modal-header-title">
             <FileText size={20} className="text-cyan" />
-            <h3>Sai Pradeep — Resume Preview</h3>
+            <h3>Sai Pradeep S — Resume Preview</h3>
           </div>
 
           <div className="modal-header-actions">
+            <a 
+              href={personalInfo.resumePdf} 
+              download="Sai_Pradeep_Resume.pdf" 
+              className="btn btn-primary btn-sm"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+            >
+              <Download size={15} />
+              <span>Download PDF</span>
+            </a>
             <button onClick={handlePrint} className="btn btn-secondary btn-sm">
               <Printer size={15} />
               <span>Print / Save PDF</span>
@@ -45,15 +54,15 @@ const ResumeModal = ({ onClose }) => {
         <div id="printable-resume" className="resume-document">
           {/* Header */}
           <header className="resume-header">
-            <h1 className="resume-name">{personalInfo.name}</h1>
-            <div className="resume-role-title">{personalInfo.headline}</div>
-
+            <h1 className="resume-name">SAI PRADEEP S</h1>
             <div className="resume-contact-bar">
-              <span><Mail size={12} /> {personalInfo.email}</span>
-              <span><Phone size={12} /> {personalInfo.phone}</span>
-              <span><MapPin size={12} /> {personalInfo.location}</span>
-              <span><Linkedin size={12} /> linkedin.com/in/sai-pradeep-00999a282</span>
-              <span><Github size={12} /> github.com/Sai20045</span>
+              <span><Phone size={12} /> +91-8072677544</span>
+              <span><Mail size={12} /> saipradeep2004@gmail.com</span>
+              <span><MapPin size={12} /> Chennai, Tamilnadu</span>
+            </div>
+            <div className="resume-contact-bar" style={{ marginTop: '6px' }}>
+              <span><a href="https://github.com/Sai20045" target="_blank" rel="noreferrer"><Github size={12} /> GitHub</a></span>
+              <span><a href="https://www.linkedin.com/in/sai-pradeep-00999a282" target="_blank" rel="noreferrer"><Linkedin size={12} /> LinkedIn</a></span>
             </div>
           </header>
 
@@ -61,80 +70,112 @@ const ResumeModal = ({ onClose }) => {
           <section className="resume-section">
             <h2 className="resume-section-title">Professional Summary</h2>
             <p className="resume-text">
-              Ambitious <strong>Computer Science Engineering (BE CSE)</strong> graduate and certified <strong>Python Full Stack Developer</strong> with hands-on expertise in building web applications using Python, Django, REST APIs, JavaScript, React.js, and SQL databases. Strong problem-solving aptitude, passionate about writing clean, maintainable code, and eager to contribute to dynamic software development teams.
+              Enthusiastic computer science undergraduate with strong foundational skills in software development and programming, Seeking an entry level Full stack developer / AI Engineer role. Proficient in Python, JavaScript ES6+, Django, MySQL, SQL, HTML, CSS and React.JS. Hands-on experience in developing web applications through academic and internship projects. Strong understanding of frontend and backend development, database management, and responsive web design and development. Demonstrates strong analytical, problem-solving, teamwork, and communication skills. Passionate about building scalable, efficient, and user-focused software solutions while continuously learning emerging technologies.
             </p>
-          </section>
-
-          {/* Technical Skills */}
-          <section className="resume-section">
-            <h2 className="resume-section-title">Technical Skills</h2>
-            <div className="resume-skills-grid">
-              <div><strong>Languages & Core:</strong> Python, JavaScript (ES6+), HTML5, CSS3, SQL</div>
-              <div><strong>Backend Frameworks:</strong> Django, Django REST Framework (DRF), FastAPI, REST APIs</div>
-              <div><strong>Frontend Frameworks:</strong> React.js, Axios, REST API Integration</div>
-              <div><strong>Databases:</strong> MySQL, SQL, MongoDB</div>
-              <div><strong>Tools & DevOps:</strong> Git, GitHub, Postman, Docker, Vercel</div>
-              <div><strong>Engineering Concepts:</strong> OOP, REST Architecture, CRUD, Agile Basics, Data Modeling</div>
-            </div>
-          </section>
-
-          {/* Key Projects */}
-          <section className="resume-section">
-            <h2 className="resume-section-title">Full Stack Projects</h2>
-            {projectsData.map((project) => (
-              <div key={project.id} className="resume-project-item">
-                <div className="resume-item-header">
-                  <strong className="item-title">{project.title}</strong>
-                  <span className="item-tech">{project.technologies.join(' • ')}</span>
-                </div>
-                <p className="resume-text">{project.shortDescription}</p>
-                <ul className="resume-bullet-list">
-                  {project.keyFeatures.slice(0, 3).map((feat, i) => (
-                    <li key={i}>{feat}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </section>
-
-          {/* Experience & Training */}
-          <section className="resume-section">
-            <h2 className="resume-section-title">Professional Training & Internship</h2>
-            {experienceData.map((exp, idx) => (
-              <div key={idx} className="resume-exp-item">
-                <div className="resume-item-header">
-                  <strong className="item-title">{exp.role}</strong>
-                  <span className="item-sub">{exp.organization} | {exp.location}</span>
-                </div>
-                <p className="resume-text">{exp.summary}</p>
-              </div>
-            ))}
           </section>
 
           {/* Education */}
           <section className="resume-section">
             <h2 className="resume-section-title">Education</h2>
-            {educationData.map((edu, idx) => (
-              <div key={idx} className="resume-edu-item">
-                <div className="resume-item-header">
-                  <strong className="item-title">{edu.degree} — {edu.field}</strong>
-                  <span className="item-sub">{edu.year}</span>
-                </div>
-                <div>{edu.college} — Result: {edu.score}</div>
+            <div className="resume-edu-item">
+              <div className="resume-item-header">
+                <strong className="item-title">Bachelor of Computer Science and Engineering (2022-2026)</strong>
               </div>
-            ))}
+              <div className="item-sub">Agni College of Technology | Anna university</div>
+              <div className="resume-text">Computer Science and Engineering with 8.0 CGPA</div>
+            </div>
+
+            <div className="resume-edu-item">
+              <div className="resume-item-header">
+                <strong className="item-title">HSC - Higher Secondary School (2021-2022)</strong>
+              </div>
+              <div className="item-sub">Government Higher Secondary School (XII - HSC)</div>
+            </div>
+
+            <div className="resume-edu-item">
+              <div className="resume-item-header">
+                <strong className="item-title">SSLC - (2019-2020)</strong>
+              </div>
+              <div className="item-sub">Government Higher Secondary School (X - SSLC)</div>
+            </div>
+          </section>
+
+          {/* Technical Skills */}
+          <section className="resume-section">
+            <h2 className="resume-section-title">Technical Skills</h2>
+            <ul className="resume-bullet-list">
+              <li><strong>Programming Languages:</strong> Python, JavaScript ES6+</li>
+              <li><strong>Frameworks & Libraries:</strong> Django, Bootstrap, TailwindCSS, React.js</li>
+              <li><strong>Web Technologies:</strong> HTML5, CSS3</li>
+              <li><strong>Database:</strong> SQL, MySQL</li>
+              <li><strong>Tools:</strong> Figma, GitHub, Git, Visual Studio, Antigravity, Vercel</li>
+              <li><strong>Soft Skills:</strong> Problem solving, Team Collaboration, Time Management, Communication Skills</li>
+            </ul>
+          </section>
+
+          {/* Internship */}
+          <section className="resume-section">
+            <h2 className="resume-section-title">Internship</h2>
+            <div className="resume-exp-item">
+              <div className="resume-item-header">
+                <strong className="item-title">Full Stack Developer Intern / Intern-delivery</strong>
+                <span className="item-sub">Mar 2026 - May 2026</span>
+              </div>
+              <div className="item-sub" style={{ marginBottom: '6px' }}>Virtusa Consulting Services Pvt.Ltd | Remote</div>
+              <ul className="resume-bullet-list">
+                <li>Developed responsive web applications using Python, JavaScript, Django, SQL, HTML, CSS, Bootstrap and React.js.</li>
+                <li>Built and integrated REST APIs for frontend and backend communication.</li>
+                <li>Collaborated remotely with development teams using Git and Agile practices.</li>
+                <li>Assisted in debugging, testing, and improving application performance.</li>
+                <li>Worked on database operations and responsive UI enhancements.</li>
+              </ul>
+            </div>
+          </section>
+
+          {/* Projects */}
+          <section className="resume-section">
+            <h2 className="resume-section-title">Projects</h2>
+            <div className="resume-project-item">
+              <div className="resume-item-header">
+                <strong className="item-title">GuardianAI-Unified AI Safety & Recovery System for Mass Gatherings</strong>
+                <span className="item-sub">2025</span>
+              </div>
+              <ul className="resume-bullet-list">
+                <li>Developed a real-time AI surveillance system for threat detection using computer vision, face recognition, emotion analysis, and audio processing with a web dashboard</li>
+                <li>Built a full-stack application using Python Flask APIs and React.js for live camera monitoring and alert visualization</li>
+                <li>Implemented face recognition using InsightFace and object detection using YOLOV8 for suspicious activity detection</li>
+                <li>Developed panic detection using DeepFace emotion analysis and Librosa audio processing</li>
+                <li>Applied image preprocessing and video frame analysis to improve detection accuracy and reduce false alerts.</li>
+                <li>Designed a local edge-processing system for secure real-time AI inference ince and faster response</li>
+                <li><strong>Tech Stack:</strong> Python, Flask, React.js, Tailwind CSS, YOLOv8, ArcFace, DeepFace, Librosa, OpenCV, MongoDB</li>
+              </ul>
+            </div>
           </section>
 
           {/* Certifications */}
           <section className="resume-section">
             <h2 className="resume-section-title">Certifications</h2>
             <ul className="resume-bullet-list">
-              {certificationsData.map((cert, idx) => (
-                <li key={idx}>
-                  <strong>{cert.title}</strong> — {cert.issuer} ({cert.date}) [ID: {cert.credentialId}]
-                </li>
-              ))}
+              <li>Python full stack - Qspiders Training Institute</li>
+              <li>Python3.x programming course - Skill Rack</li>
+              <li>Python for Beginners - Udemy</li>
             </ul>
+          </section>
+
+          {/* Awards & Recognition */}
+          <section className="resume-section">
+            <h2 className="resume-section-title">Awards and Recognition</h2>
+            <p className="resume-text">
+              Finalist Recognition and Certificate of Appreciation at Ujjain Mahakumbh Hackathon 2025, a national-level technology challenge organized by the Department of Science & Technology, Government of Madhya Pradesh, for innovation, technical expertise, and problem-solving abilities displayed during the competition.
+            </p>
+          </section>
+
+          {/* Declaration */}
+          <section className="resume-section">
+            <h2 className="resume-section-title">Declaration</h2>
+            <p className="resume-text">
+              I hereby declare that all the information mentioned above is true and correct to the best of my knowledge. I am confident that my skills and experience will align with the organization’s objectives if given an opportunity.
+            </p>
           </section>
         </div>
       </div>

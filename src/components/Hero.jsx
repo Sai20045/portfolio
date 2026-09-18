@@ -58,6 +58,7 @@ const Hero = ({ onOpenResume }) => {
             <a
               href={personalInfo.resumePdf}
               download="Sai_Pradeep_Resume.pdf"
+              onClick={onOpenResume}
               className="btn btn-outline btn-download-hero"
             >
               <Download size={18} />

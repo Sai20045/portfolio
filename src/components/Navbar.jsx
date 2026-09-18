@@ -91,14 +91,16 @@ const Navbar = ({ onOpenResume }) => {
 
         {/* Action Button */}
         <div className="navbar-actions">
-          <button 
+          <a 
+            href={personalInfo.resumePdf}
+            download="Sai_Pradeep_Resume.pdf"
             onClick={onOpenResume} 
             className="btn btn-primary btn-sm btn-resume-nav"
             aria-label="Download Resume"
           >
             <Download size={15} />
             <span>Download Resume</span>
-          </button>
+          </a>
 
           {/* Mobile Hamburger Toggle */}
           <button
@@ -141,16 +143,19 @@ const Navbar = ({ onOpenResume }) => {
           </div>
 
           <div className="mobile-drawer-footer">
-            <button
+            <a
+              href={personalInfo.resumePdf}
+              download="Sai_Pradeep_Resume.pdf"
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenResume();
               }}
               className="btn btn-primary w-full"
+              style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
             >
               <Download size={16} />
               <span>Download Resume</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>
